@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButtons, IonThumbnail, IonRow, IonText, IonCol, IonLabel, IonSearchbar, IonButton } from '@ionic/angular/standalone';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButtons, IonThumbnail, IonRow, IonText, IonCol, IonLabel, IonSearchbar, IonButton, IonicSlides, IonList, IonListHeader } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { personCircleOutline, appsOutline, options } from 'ionicons/icons';
+import { JobComponent } from 'src/app/components/job/job.component';
 
 
 @Component({
@@ -9,10 +10,12 @@ import { personCircleOutline, appsOutline, options } from 'ionicons/icons';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonButton, IonSearchbar, IonCol, IonText, IonRow, IonIcon, IonHeader, IonToolbar, IonContent, IonTitle, IonButtons, IonThumbnail, IonLabel]
+  imports: [IonListHeader, IonList, IonButton, IonSearchbar, IonCol, IonText, IonRow, IonIcon, IonHeader, IonToolbar, IonContent, IonTitle, IonButtons, IonThumbnail, IonLabel, JobComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePage implements OnInit {
 
+  swipperModules = [IonicSlides];
   popular: any[] = [];
   recent: any[] = [];
 

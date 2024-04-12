@@ -49,4 +49,35 @@
     </ion-col>
   </ion-row>
 
+  @if (popular.length > 0) {
+    <ion-list lines="none">
+
+      <ion-list-header>
+        <ion-label>
+          Popular Jobs
+        </ion-label>
+        <ion-button fill="clear" size="small" color="medium">
+          <ion-text>
+            Show All
+          </ion-text>
+        </ion-button>
+      </ion-list-header>
+
+      <div>
+        <swiper-container
+          [modules] = "swipperModules"
+          [slidesPerView] = "1.4"
+          [keyboard] = "true"
+          [centrerSlides] = "true">
+          @for (job of popular; track job.id) {
+            <swiper-slide>
+             <app-job [job]="job" [routerLink]="['/', 'tabs', 'job', job.id]"></app-job>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+
+    </ion-list>
+  }
+
 </ion-content>
