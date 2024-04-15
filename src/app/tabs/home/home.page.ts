@@ -15,7 +15,7 @@ import { JobComponent } from 'src/app/components/job/job.component';
 })
 export class HomePage implements OnInit {
 
-  swipperModules = [IonicSlides];
+  swiperModules = [IonicSlides];
   popular: any[] = [];
   recent: any[] = [];
 
